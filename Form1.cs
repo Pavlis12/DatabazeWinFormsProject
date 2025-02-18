@@ -131,10 +131,10 @@ namespace WindowsFormsApp1
 
         private void OdsBtn_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(odbIDtxt.Text))
+            if (!string.IsNullOrEmpty(odsIDtxt.Text))
             {
 
-                string hledanNazev = odbIDtxt.Text.Trim().Replace("'", "''");
+                string hledanNazev = odsIDtxt.Text.Trim().Replace("'", "''");
                 DataRow[] vymazat = table.Select($"Convert(ID, 'System.String') LIKE '{hledanNazev}'");
                 if (vymazat.Length > 0)
                 {
@@ -151,5 +151,7 @@ namespace WindowsFormsApp1
 
             }
         }
+
+       
     }
 }

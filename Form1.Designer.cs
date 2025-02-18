@@ -1,4 +1,4 @@
-﻿namespace Databaze
+﻿namespace WindowsFormsApp1
 {
     partial class Form1
     {
@@ -29,22 +29,33 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.hledIdTxt = new System.Windows.Forms.TextBox();
+            this.hledKatTxt = new System.Windows.Forms.TextBox();
+            this.PridIDTxt = new System.Windows.Forms.TextBox();
+            this.PridNazTxt = new System.Windows.Forms.TextBox();
+            this.PridPopTxt = new System.Windows.Forms.TextBox();
+            this.PridMKTxt = new System.Windows.Forms.TextBox();
+            this.PridKatTxt = new System.Windows.Forms.TextBox();
+            this.PridPocetTxt = new System.Windows.Forms.TextBox();
+            this.odbIDtxt = new System.Windows.Forms.TextBox();
+            this.odbPocetTxt = new System.Windows.Forms.TextBox();
+            this.odsIDtxt = new System.Windows.Forms.TextBox();
+            this.hledBtn = new System.Windows.Forms.Button();
+            this.ZpetBtn = new System.Windows.Forms.Button();
+            this.prBtn = new System.Windows.Forms.Button();
+            this.OdBtn = new System.Windows.Forms.Button();
+            this.OdsBtn = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,150 +72,260 @@
             this.dataGridView1.Size = new System.Drawing.Size(1147, 352);
             this.dataGridView1.TabIndex = 0;
             // 
-            // textBox1
+            // hledIdTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 403);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 26);
-            this.textBox1.TabIndex = 1;
+            this.hledIdTxt.Location = new System.Drawing.Point(23, 403);
+            this.hledIdTxt.Name = "hledIdTxt";
+            this.hledIdTxt.Size = new System.Drawing.Size(141, 26);
+            this.hledIdTxt.TabIndex = 1;
             // 
-            // textBox2
+            // hledKatTxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(190, 403);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 26);
-            this.textBox2.TabIndex = 2;
+            this.hledKatTxt.Location = new System.Drawing.Point(190, 403);
+            this.hledKatTxt.Name = "hledKatTxt";
+            this.hledKatTxt.Size = new System.Drawing.Size(141, 26);
+            this.hledKatTxt.TabIndex = 2;
             // 
-            // textBox3
+            // PridIDTxt
             // 
-            this.textBox3.Location = new System.Drawing.Point(23, 471);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(141, 26);
-            this.textBox3.TabIndex = 3;
+            this.PridIDTxt.Location = new System.Drawing.Point(23, 471);
+            this.PridIDTxt.Name = "PridIDTxt";
+            this.PridIDTxt.Size = new System.Drawing.Size(141, 26);
+            this.PridIDTxt.TabIndex = 3;
             // 
-            // textBox4
+            // PridNazTxt
             // 
-            this.textBox4.Location = new System.Drawing.Point(190, 471);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(141, 26);
-            this.textBox4.TabIndex = 4;
+            this.PridNazTxt.Location = new System.Drawing.Point(190, 471);
+            this.PridNazTxt.Name = "PridNazTxt";
+            this.PridNazTxt.Size = new System.Drawing.Size(141, 26);
+            this.PridNazTxt.TabIndex = 4;
             // 
-            // textBox5
+            // PridPopTxt
             // 
-            this.textBox5.Location = new System.Drawing.Point(353, 471);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(344, 109);
-            this.textBox5.TabIndex = 5;
+            this.PridPopTxt.Location = new System.Drawing.Point(353, 471);
+            this.PridPopTxt.Multiline = true;
+            this.PridPopTxt.Name = "PridPopTxt";
+            this.PridPopTxt.Size = new System.Drawing.Size(344, 109);
+            this.PridPopTxt.TabIndex = 5;
             // 
-            // textBox6
+            // PridMKTxt
             // 
-            this.textBox6.Location = new System.Drawing.Point(703, 471);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(64, 26);
-            this.textBox6.TabIndex = 6;
+            this.PridMKTxt.Location = new System.Drawing.Point(703, 471);
+            this.PridMKTxt.Name = "PridMKTxt";
+            this.PridMKTxt.Size = new System.Drawing.Size(64, 26);
+            this.PridMKTxt.TabIndex = 6;
             // 
-            // textBox7
+            // PridKatTxt
             // 
-            this.textBox7.Location = new System.Drawing.Point(773, 471);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(141, 26);
-            this.textBox7.TabIndex = 7;
+            this.PridKatTxt.Location = new System.Drawing.Point(773, 471);
+            this.PridKatTxt.Name = "PridKatTxt";
+            this.PridKatTxt.Size = new System.Drawing.Size(141, 26);
+            this.PridKatTxt.TabIndex = 7;
             // 
-            // textBox8
+            // PridPocetTxt
             // 
-            this.textBox8.Location = new System.Drawing.Point(920, 471);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(141, 26);
-            this.textBox8.TabIndex = 8;
+            this.PridPocetTxt.Location = new System.Drawing.Point(920, 471);
+            this.PridPocetTxt.Name = "PridPocetTxt";
+            this.PridPocetTxt.Size = new System.Drawing.Size(141, 26);
+            this.PridPocetTxt.TabIndex = 8;
             // 
-            // textBox9
+            // odbIDtxt
             // 
-            this.textBox9.Location = new System.Drawing.Point(773, 540);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(141, 26);
-            this.textBox9.TabIndex = 9;
+            this.odbIDtxt.Location = new System.Drawing.Point(773, 540);
+            this.odbIDtxt.Name = "odbIDtxt";
+            this.odbIDtxt.Size = new System.Drawing.Size(141, 26);
+            this.odbIDtxt.TabIndex = 9;
             // 
-            // textBox10
+            // odbPocetTxt
             // 
-            this.textBox10.Location = new System.Drawing.Point(920, 540);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(141, 26);
-            this.textBox10.TabIndex = 10;
+            this.odbPocetTxt.Location = new System.Drawing.Point(920, 540);
+            this.odbPocetTxt.Name = "odbPocetTxt";
+            this.odbPocetTxt.Size = new System.Drawing.Size(141, 26);
+            this.odbPocetTxt.TabIndex = 10;
             // 
-            // textBox11
+            // odsIDtxt
             // 
-            this.textBox11.Location = new System.Drawing.Point(920, 635);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(141, 26);
-            this.textBox11.TabIndex = 11;
+            this.odsIDtxt.Location = new System.Drawing.Point(920, 635);
+            this.odsIDtxt.Name = "odsIDtxt";
+            this.odsIDtxt.Size = new System.Drawing.Size(141, 26);
+            this.odsIDtxt.TabIndex = 11;
             // 
-            // button1
+            // hledBtn
             // 
-            this.button1.Location = new System.Drawing.Point(362, 398);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 31);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.hledBtn.Location = new System.Drawing.Point(362, 398);
+            this.hledBtn.Name = "hledBtn";
+            this.hledBtn.Size = new System.Drawing.Size(127, 31);
+            this.hledBtn.TabIndex = 12;
+            this.hledBtn.Text = "hledat";
+            this.hledBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // ZpetBtn
             // 
-            this.button2.Location = new System.Drawing.Point(508, 398);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 31);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ZpetBtn.Location = new System.Drawing.Point(508, 398);
+            this.ZpetBtn.Name = "ZpetBtn";
+            this.ZpetBtn.Size = new System.Drawing.Size(127, 31);
+            this.ZpetBtn.TabIndex = 13;
+            this.ZpetBtn.Text = "Zpět";
+            this.ZpetBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // prBtn
             // 
-            this.button3.Location = new System.Drawing.Point(1067, 471);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 31);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.prBtn.Location = new System.Drawing.Point(1067, 471);
+            this.prBtn.Name = "prBtn";
+            this.prBtn.Size = new System.Drawing.Size(127, 31);
+            this.prBtn.TabIndex = 14;
+            this.prBtn.Text = "Přidat";
+            this.prBtn.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // OdBtn
             // 
-            this.button4.Location = new System.Drawing.Point(1067, 540);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 31);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.OdBtn.Location = new System.Drawing.Point(1067, 540);
+            this.OdBtn.Name = "OdBtn";
+            this.OdBtn.Size = new System.Drawing.Size(127, 31);
+            this.OdBtn.TabIndex = 15;
+            this.OdBtn.Text = "Odebrat";
+            this.OdBtn.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // OdsBtn
             // 
-            this.button5.Location = new System.Drawing.Point(1067, 630);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(127, 31);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.OdsBtn.Location = new System.Drawing.Point(1067, 630);
+            this.OdsBtn.Name = "OdsBtn";
+            this.OdsBtn.Size = new System.Drawing.Size(127, 31);
+            this.OdsBtn.TabIndex = 16;
+            this.OdsBtn.Text = "Odstranit";
+            this.OdsBtn.UseVisualStyleBackColor = true;
+            // 
+            // ID
+            // 
+            this.ID.AutoSize = true;
+            this.ID.Location = new System.Drawing.Point(27, 382);
+            this.ID.Name = "ID";
+            this.ID.Size = new System.Drawing.Size(26, 20);
+            this.ID.TabIndex = 17;
+            this.ID.Text = "ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(186, 382);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 20);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Kategorie";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(27, 448);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 20);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "ID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(186, 448);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 20);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Nazev";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(358, 448);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 20);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Popis";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(699, 448);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 20);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "m/k";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(769, 448);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 20);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "kategorie";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(916, 448);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 20);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Počet";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(778, 517);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(26, 20);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "ID";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(916, 517);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 20);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Počet";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(916, 612);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(26, 20);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "ID";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 744);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ID);
+            this.Controls.Add(this.OdsBtn);
+            this.Controls.Add(this.OdBtn);
+            this.Controls.Add(this.prBtn);
+            this.Controls.Add(this.ZpetBtn);
+            this.Controls.Add(this.hledBtn);
+            this.Controls.Add(this.odsIDtxt);
+            this.Controls.Add(this.odbPocetTxt);
+            this.Controls.Add(this.odbIDtxt);
+            this.Controls.Add(this.PridPocetTxt);
+            this.Controls.Add(this.PridKatTxt);
+            this.Controls.Add(this.PridMKTxt);
+            this.Controls.Add(this.PridPopTxt);
+            this.Controls.Add(this.PridNazTxt);
+            this.Controls.Add(this.PridIDTxt);
+            this.Controls.Add(this.hledKatTxt);
+            this.Controls.Add(this.hledIdTxt);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -218,22 +339,33 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox hledIdTxt;
+        private System.Windows.Forms.TextBox hledKatTxt;
+        private System.Windows.Forms.TextBox PridIDTxt;
+        private System.Windows.Forms.TextBox PridNazTxt;
+        private System.Windows.Forms.TextBox PridPopTxt;
+        private System.Windows.Forms.TextBox PridMKTxt;
+        private System.Windows.Forms.TextBox PridKatTxt;
+        private System.Windows.Forms.TextBox PridPocetTxt;
+        private System.Windows.Forms.TextBox odbIDtxt;
+        private System.Windows.Forms.TextBox odbPocetTxt;
+        private System.Windows.Forms.TextBox odsIDtxt;
+        private System.Windows.Forms.Button hledBtn;
+        private System.Windows.Forms.Button ZpetBtn;
+        private System.Windows.Forms.Button prBtn;
+        private System.Windows.Forms.Button OdBtn;
+        private System.Windows.Forms.Button OdsBtn;
+        private System.Windows.Forms.Label ID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }
 
