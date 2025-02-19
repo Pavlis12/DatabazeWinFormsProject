@@ -61,12 +61,9 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 21);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(1147, 352);
@@ -158,6 +155,7 @@
             this.hledBtn.TabIndex = 12;
             this.hledBtn.Text = "hledat";
             this.hledBtn.UseVisualStyleBackColor = true;
+            this.hledBtn.Click += new System.EventHandler(this.hledBtn_Click_1);
             // 
             // ZpetBtn
             // 
@@ -167,6 +165,7 @@
             this.ZpetBtn.TabIndex = 13;
             this.ZpetBtn.Text = "Zpět";
             this.ZpetBtn.UseVisualStyleBackColor = true;
+            this.ZpetBtn.Click += new System.EventHandler(this.ZpetBtn_Click_1);
             // 
             // prBtn
             // 
@@ -176,6 +175,7 @@
             this.prBtn.TabIndex = 14;
             this.prBtn.Text = "Přidat";
             this.prBtn.UseVisualStyleBackColor = true;
+            this.prBtn.Click += new System.EventHandler(this.prBtn_Click_1);
             // 
             // OdBtn
             // 
@@ -185,6 +185,7 @@
             this.OdBtn.TabIndex = 15;
             this.OdBtn.Text = "Odebrat";
             this.OdBtn.UseVisualStyleBackColor = true;
+            this.OdBtn.Click += new System.EventHandler(this.OdBtn_Click_1);
             // 
             // OdsBtn
             // 
@@ -194,6 +195,7 @@
             this.OdsBtn.TabIndex = 16;
             this.OdsBtn.Text = "Odstranit";
             this.OdsBtn.UseVisualStyleBackColor = true;
+            this.OdsBtn.Click += new System.EventHandler(this.OdsBtn_Click_1);
             // 
             // ID
             // 

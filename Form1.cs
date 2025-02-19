@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = table;
         }
 
-        private void prBtn_Click(object sender, EventArgs e)
+        private void prBtn_Click_1(object sender, EventArgs e)
         {
             if (int.TryParse(PridPocetTxt.Text, out int pocet))
             {
@@ -55,13 +55,58 @@ namespace WindowsFormsApp1
                 }
 
             }
-
-
         }
 
-        private void hledBtn_Click(object sender, EventArgs e)
+        private void OdBtn_Click_1(object sender, EventArgs e)
         {
+            
+                string hledaneID = odbIDtxt.Text.Trim();
 
+            foreach (DataRow row in table.Rows)
+                    {
+
+                        if (row["ID"].ToString() == hledaneID) 
+                        {
+                            if(int.TryParse(odbPocetTxt.Text, out int novyPocet))
+                              {
+                      
+                    
+                             if (int.TryParse(row["Počet"].ToString(), out int aktualniPocet))
+                            {
+                                row["Počet"] = aktualniPocet - novyPocet; 
+                                       
+                            }
+                        }
+                }
+            }
+                  
+        }
+
+        private void OdsBtn_Click_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(odsIDtxt.Text))
+            {
+
+                string hledanNazev = odsIDtxt.Text.Trim().Replace("'", "''");
+                DataRow[] vymazat = table.Select($"Convert(ID, 'System.String') LIKE '{hledanNazev}'");
+                if (vymazat.Length > 0)
+                {
+                    foreach (DataRow row in vymazat)
+                    {
+                        row.Delete();
+                    }
+                    table.AcceptChanges();
+
+
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = table;
+                }
+
+            }
+        }
+
+        private void hledBtn_Click_1(object sender, EventArgs e)
+        {
             string hledatID = hledIdTxt.Text;
             string hledatKat = hledKatTxt.Text;
             string filtr = "";
@@ -102,56 +147,11 @@ namespace WindowsFormsApp1
             {
                 dataGridView1.DataSource = table;
             }
-
         }
 
-        private void ZpetBtn_Click(object sender, EventArgs e)
+        private void ZpetBtn_Click_1(object sender, EventArgs e)
         {
             dataGridView1.DataSource = table;
         }
-
-        private void OdBtn_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(odbIDtxt.Text) && int.TryParse(odbPocetTxt.Text, out int novyPocet))
-            {
-
-                string HledanNazev = odbIDtxt.Text;
-                foreach (DataRow row in table.Rows)
-                {
-                    if ((string)row["ID"] == HledanNazev)
-                    {
-                        row["Počet"] = novyPocet;
-                        break;
-                    }
-
-                }
-
-            }
-        }
-
-        private void OdsBtn_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(odsIDtxt.Text))
-            {
-
-                string hledanNazev = odsIDtxt.Text.Trim().Replace("'", "''");
-                DataRow[] vymazat = table.Select($"Convert(ID, 'System.String') LIKE '{hledanNazev}'");
-                if (vymazat.Length > 0)
-                {
-                    foreach (DataRow row in vymazat)
-                    {
-                        row.Delete();
-                    }
-                    table.AcceptChanges();
-
-
-                    dataGridView1.DataSource = null;
-                    dataGridView1.DataSource = table;
-                }
-
-            }
-        }
-
-       
     }
 }
