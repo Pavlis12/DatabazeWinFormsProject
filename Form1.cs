@@ -16,7 +16,10 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-
+        class Zaznam
+        {
+            string nazev { get; set; }
+        }
         private DataTable table;
         string path = "";
         public Form1()
@@ -167,7 +170,7 @@ namespace WindowsFormsApp1
         }
         private void Ulozit()
         {
-            StreamWriter writer = new StreamWriter(path);
+            StreamWriter writer = new StreamWriter(path, true);
             string zaznam = PridIDTxt.Text + ";" + PridNazTxt.Text + ";" + PridPopTxt.Text + ";" + PridMKTxt.Text + ";" + PridKatTxt.Text + ";"+PridPocetTxt.Text;
             writer.WriteLine(zaznam);
             writer.Close();
