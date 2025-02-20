@@ -55,9 +55,15 @@ namespace WindowsFormsApp1
 
         private void prBtn_Click_1(object sender, EventArgs e)
         {
+            Pridat();
+        }
+        
+        private void Pridat()
+        {
             if (int.TryParse(PridPocetTxt.Text, out int pocet))
             {
                 Ulozit();
+                
                 if (!string.IsNullOrEmpty(PridMKTxt.Text) && PridMKTxt.Text.Length == 1)
                 {
                     char mk = PridMKTxt.Text[0];
@@ -76,11 +82,13 @@ namespace WindowsFormsApp1
             }
         }
 
-
-
         private void OdBtn_Click_1(object sender, EventArgs e)
         {
+            OdebratPocet();
+        }
 
+        private void OdebratPocet()
+        {
             string hledaneID = odbIDtxt.Text.Trim();
 
             foreach (DataRow row in table.Rows)
@@ -94,6 +102,11 @@ namespace WindowsFormsApp1
 
                         if (int.TryParse(row["Počet"].ToString(), out int aktualniPocet))
                         {
+                            if (novyPocet > aktualniPocet)
+                            {
+                                MessageBox.Show($"Nelze jít do záporných hodnot{novyPocet} > {aktualniPocet}");
+                                break;
+                            }
                             row["Počet"] = aktualniPocet - novyPocet;
 
                         }
@@ -127,6 +140,12 @@ namespace WindowsFormsApp1
         }
 
         private void hledBtn_Click_1(object sender, EventArgs e)
+        {
+            Hledat();
+           
+        }
+
+        private void Hledat()
         {
             string hledatID = hledIdTxt.Text;
             string hledatKat = hledKatTxt.Text;
@@ -216,9 +235,38 @@ namespace WindowsFormsApp1
 
             }
             dataGridView1.DataSource = table;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+           
         }
+
+        private void PridatPocBtn_Click(object sender, EventArgs e)
+        {
+            PridatPocet();
         }
+
+        private void PridatPocet()
+        {
+            string hledaneID = odbIDtxt.Text.Trim();
+
+            foreach (DataRow row in table.Rows)
+            {
+
+                if (row["ID"].ToString() == hledaneID)
+                {
+                    if (int.TryParse(odbPocetTxt.Text, out int novyPocet))
+                    {
+
+
+                        if (int.TryParse(row["Počet"].ToString(), out int aktualniPocet))
+                        {
+
+                            row["Počet"] = aktualniPocet + novyPocet;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
     }
 
 

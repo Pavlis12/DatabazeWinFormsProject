@@ -57,6 +57,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.NacistBtn = new System.Windows.Forms.Button();
+            this.PridatPocBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,21 +130,21 @@
             // 
             // odbIDtxt
             // 
-            this.odbIDtxt.Location = new System.Drawing.Point(773, 540);
+            this.odbIDtxt.Location = new System.Drawing.Point(773, 571);
             this.odbIDtxt.Name = "odbIDtxt";
             this.odbIDtxt.Size = new System.Drawing.Size(141, 26);
             this.odbIDtxt.TabIndex = 9;
             // 
             // odbPocetTxt
             // 
-            this.odbPocetTxt.Location = new System.Drawing.Point(920, 540);
+            this.odbPocetTxt.Location = new System.Drawing.Point(920, 571);
             this.odbPocetTxt.Name = "odbPocetTxt";
             this.odbPocetTxt.Size = new System.Drawing.Size(141, 26);
             this.odbPocetTxt.TabIndex = 10;
             // 
             // odsIDtxt
             // 
-            this.odsIDtxt.Location = new System.Drawing.Point(920, 635);
+            this.odsIDtxt.Location = new System.Drawing.Point(920, 654);
             this.odsIDtxt.Name = "odsIDtxt";
             this.odsIDtxt.Size = new System.Drawing.Size(141, 26);
             this.odsIDtxt.TabIndex = 11;
@@ -180,7 +181,7 @@
             // 
             // OdBtn
             // 
-            this.OdBtn.Location = new System.Drawing.Point(1067, 540);
+            this.OdBtn.Location = new System.Drawing.Point(1067, 599);
             this.OdBtn.Name = "OdBtn";
             this.OdBtn.Size = new System.Drawing.Size(127, 31);
             this.OdBtn.TabIndex = 15;
@@ -190,7 +191,7 @@
             // 
             // OdsBtn
             // 
-            this.OdsBtn.Location = new System.Drawing.Point(1067, 630);
+            this.OdsBtn.Location = new System.Drawing.Point(1067, 649);
             this.OdsBtn.Name = "OdsBtn";
             this.OdsBtn.Size = new System.Drawing.Size(127, 31);
             this.OdsBtn.TabIndex = 16;
@@ -273,7 +274,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(778, 517);
+            this.label9.Location = new System.Drawing.Point(778, 548);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(26, 20);
             this.label9.TabIndex = 25;
@@ -282,7 +283,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(916, 517);
+            this.label10.Location = new System.Drawing.Point(916, 548);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(50, 20);
             this.label10.TabIndex = 26;
@@ -291,7 +292,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(916, 612);
+            this.label11.Location = new System.Drawing.Point(916, 631);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(26, 20);
             this.label11.TabIndex = 27;
@@ -299,7 +300,7 @@
             // 
             // NacistBtn
             // 
-            this.NacistBtn.Location = new System.Drawing.Point(1067, 701);
+            this.NacistBtn.Location = new System.Drawing.Point(23, 517);
             this.NacistBtn.Name = "NacistBtn";
             this.NacistBtn.Size = new System.Drawing.Size(127, 31);
             this.NacistBtn.TabIndex = 28;
@@ -307,11 +308,22 @@
             this.NacistBtn.UseVisualStyleBackColor = true;
             this.NacistBtn.Click += new System.EventHandler(this.NacistBtn_Click);
             // 
+            // PridatPocBtn
+            // 
+            this.PridatPocBtn.Location = new System.Drawing.Point(1067, 547);
+            this.PridatPocBtn.Name = "PridatPocBtn";
+            this.PridatPocBtn.Size = new System.Drawing.Size(127, 31);
+            this.PridatPocBtn.TabIndex = 31;
+            this.PridatPocBtn.Text = "Pridat";
+            this.PridatPocBtn.UseVisualStyleBackColor = true;
+            this.PridatPocBtn.Click += new System.EventHandler(this.PridatPocBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 744);
+            this.Controls.Add(this.PridatPocBtn);
             this.Controls.Add(this.NacistBtn);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -381,6 +393,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button NacistBtn;
+        private System.Windows.Forms.Button PridatPocBtn;
     }
 }
 
