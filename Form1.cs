@@ -197,28 +197,29 @@ namespace WindowsFormsApp1
                
                 string[] hodnoty = radek.Split(';');
 
-               
+
                 if (hodnoty.Length == 6)
                 {
                     
-                    Zaznam Zaznam = new Zaznam
-                    {
-                        ID = hodnoty[0],
-                        Nazev = hodnoty[1],
-                        Popis = hodnoty[2],
-                        MK = hodnoty[3],
-                        Kategorie = hodnoty[4],
-                        Pocet = hodnoty[5]
-                    };
-                    produkty.Add(Zaznam);
-                   
+                    DataRow row = table.NewRow();
+                    row["ID"] = hodnoty[0];
+                    row["Název"] = hodnoty[1];
+                    row["Popis"] = hodnoty[2];
+                    row["M/K"] = hodnoty[3][0]; 
+                    row["Kategorie"] = hodnoty[4];
+                    row["Počet"] = int.TryParse(hodnoty[5], out int pocet) ? pocet : 0;
+
+                    
+                    table.Rows.Add(row);
                 }
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = produkty;
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                 
+
             }
+            dataGridView1.DataSource = table;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-   }
-}
+        }
+    }
+
 
 
