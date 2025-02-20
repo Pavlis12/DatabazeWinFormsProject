@@ -18,7 +18,12 @@ namespace WindowsFormsApp1
     {
         class Zaznam
         {
-            string nazev { get; set; }
+            public string ID { get; set; }
+            public string Nazev { get; set; }
+            public string Popis { get; set; }
+            public string MK { get; set; }
+            public string Kategorie { get; set; }
+            public string Pocet { get; set; }
         }
         private DataTable table;
         string path = "";
@@ -45,6 +50,7 @@ namespace WindowsFormsApp1
             table.Columns.Add("M/K", typeof(char));
             table.Columns.Add("Počet", typeof(int));
             dataGridView1.DataSource = table;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void prBtn_Click_1(object sender, EventArgs e)
@@ -66,35 +72,35 @@ namespace WindowsFormsApp1
                     PridPocetTxt.Text = string.Empty;
                     PridPopTxt.Text = string.Empty;
                 }
-                
+
             }
         }
 
-       
+
 
         private void OdBtn_Click_1(object sender, EventArgs e)
         {
-            
-                string hledaneID = odbIDtxt.Text.Trim();
+
+            string hledaneID = odbIDtxt.Text.Trim();
 
             foreach (DataRow row in table.Rows)
+            {
+
+                if (row["ID"].ToString() == hledaneID)
+                {
+                    if (int.TryParse(odbPocetTxt.Text, out int novyPocet))
                     {
 
-                        if (row["ID"].ToString() == hledaneID) 
+
+                        if (int.TryParse(row["Počet"].ToString(), out int aktualniPocet))
                         {
-                            if(int.TryParse(odbPocetTxt.Text, out int novyPocet))
-                              {
-                      
-                    
-                             if (int.TryParse(row["Počet"].ToString(), out int aktualniPocet))
-                            {
-                                row["Počet"] = aktualniPocet - novyPocet; 
-                                       
-                            }
+                            row["Počet"] = aktualniPocet - novyPocet;
+
                         }
+                    }
                 }
             }
-                  
+
         }
 
         private void OdsBtn_Click_1(object sender, EventArgs e)
@@ -171,13 +177,48 @@ namespace WindowsFormsApp1
         private void Ulozit()
         {
             StreamWriter writer = new StreamWriter(path, true);
-            string zaznam = PridIDTxt.Text + ";" + PridNazTxt.Text + ";" + PridPopTxt.Text + ";" + PridMKTxt.Text + ";" + PridKatTxt.Text + ";"+PridPocetTxt.Text;
+            string zaznam = PridIDTxt.Text + ";" + PridNazTxt.Text + ";" + PridPopTxt.Text + ";" + PridMKTxt.Text + ";" + PridKatTxt.Text + ";" + PridPocetTxt.Text;
             writer.WriteLine(zaznam);
             writer.Close();
-
         }
-    }
-   
+
+        private void NacistBtn_Click(object sender, EventArgs e)
+        {
+            Nacist();
+        }
+
+        private void Nacist()
+        {
+            StreamReader reader = new StreamReader(path, true);
+            string radek;
+            List<Zaznam> produkty = new List<Zaznam>();
+            while ((radek = reader.ReadLine()) != null)
+            {
+               
+                string[] hodnoty = radek.Split(';');
+
+               
+                if (hodnoty.Length == 6)
+                {
+                    
+                    Zaznam Zaznam = new Zaznam
+                    {
+                        ID = hodnoty[0],
+                        Nazev = hodnoty[1],
+                        Popis = hodnoty[2],
+                        MK = hodnoty[3],
+                        Kategorie = hodnoty[4],
+                        Pocet = hodnoty[5]
+                    };
+                    produkty.Add(Zaznam);
+                   
+                }
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = produkty;
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+        }
+   }
 }
 
 

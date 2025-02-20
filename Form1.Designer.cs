@@ -56,6 +56,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.NacistBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -296,11 +297,22 @@
             this.label11.TabIndex = 27;
             this.label11.Text = "ID";
             // 
+            // NacistBtn
+            // 
+            this.NacistBtn.Location = new System.Drawing.Point(1067, 701);
+            this.NacistBtn.Name = "NacistBtn";
+            this.NacistBtn.Size = new System.Drawing.Size(127, 31);
+            this.NacistBtn.TabIndex = 28;
+            this.NacistBtn.Text = "Nacist";
+            this.NacistBtn.UseVisualStyleBackColor = true;
+            this.NacistBtn.Click += new System.EventHandler(this.NacistBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 744);
+            this.Controls.Add(this.NacistBtn);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -368,6 +380,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button NacistBtn;
     }
 }
 
