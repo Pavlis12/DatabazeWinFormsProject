@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlTypes;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -17,6 +18,7 @@ namespace WindowsFormsApp1
     {
 
         private DataTable table;
+        string path = "";
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +26,13 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Nastaveni();
+        }
+
+        private void Nastaveni()
+        {
+            path = Application.StartupPath;
+            path = path + "\\data.txt";
             dataGridView1.ReadOnly = true;
             table = new DataTable();
             table.Columns.Add("ID", typeof(string));
@@ -39,6 +48,7 @@ namespace WindowsFormsApp1
         {
             if (int.TryParse(PridPocetTxt.Text, out int pocet))
             {
+                Ulozit();
                 if (!string.IsNullOrEmpty(PridMKTxt.Text) && PridMKTxt.Text.Length == 1)
                 {
                     char mk = PridMKTxt.Text[0];
@@ -53,9 +63,11 @@ namespace WindowsFormsApp1
                     PridPocetTxt.Text = string.Empty;
                     PridPopTxt.Text = string.Empty;
                 }
-
+                
             }
         }
+
+       
 
         private void OdBtn_Click_1(object sender, EventArgs e)
         {
@@ -153,5 +165,16 @@ namespace WindowsFormsApp1
         {
             dataGridView1.DataSource = table;
         }
+        private void Ulozit()
+        {
+            StreamWriter writer = new StreamWriter(path);
+            string zaznam = PridIDTxt.Text + ";" + PridNazTxt.Text + ";" + PridPopTxt.Text + ";" + PridMKTxt.Text + ";" + PridKatTxt.Text + ";"+PridPocetTxt.Text;
+            writer.WriteLine(zaznam);
+            writer.Close();
+
+        }
     }
+   
 }
+
+
