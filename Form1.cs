@@ -118,9 +118,22 @@ namespace WindowsFormsApp1
 
         private void OdsBtn_Click_1(object sender, EventArgs e)
         {
+            Ostranit();
+        }
+
+        private void Prepis()
+        {
+            StreamWriter writer = new StreamWriter(path, false);
+            string zaznam = "";
+            writer.WriteLine(zaznam);
+            writer.Close();
+        }
+
+        private void Ostranit()
+        {
             if (!string.IsNullOrEmpty(odsIDtxt.Text))
             {
-
+                Prepis();
                 string hledanNazev = odsIDtxt.Text.Trim().Replace("'", "''");
                 DataRow[] vymazat = table.Select($"Convert(ID, 'System.String') LIKE '{hledanNazev}'");
                 if (vymazat.Length > 0)
@@ -215,8 +228,6 @@ namespace WindowsFormsApp1
             {
                
                 string[] hodnoty = radek.Split(';');
-
-
                 if (hodnoty.Length == 6)
                 {
                     
