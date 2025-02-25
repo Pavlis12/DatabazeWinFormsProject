@@ -11,6 +11,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace WindowsFormsApp1
 {
@@ -57,13 +58,13 @@ namespace WindowsFormsApp1
         {
             Pridat();
         }
-        
+
         private void Pridat()
         {
             if (int.TryParse(PridPocetTxt.Text, out int pocet))
             {
                 Ulozit();
-                
+
                 if (!string.IsNullOrEmpty(PridMKTxt.Text) && PridMKTxt.Text.Length == 1)
                 {
                     char mk = PridMKTxt.Text[0];
@@ -147,15 +148,16 @@ namespace WindowsFormsApp1
 
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = table;
+                    Prepsat();
                 }
-               
+
             }
         }
 
         private void hledBtn_Click_1(object sender, EventArgs e)
         {
             Hledat();
-           
+
         }
 
         private void Hledat()
@@ -212,8 +214,9 @@ namespace WindowsFormsApp1
             string zaznam = PridIDTxt.Text + ";" + PridNazTxt.Text + ";" + PridPopTxt.Text + ";" + PridMKTxt.Text + ";" + PridKatTxt.Text + ";" + PridPocetTxt.Text;
             writer.WriteLine(zaznam);
             writer.Close();
+
         }
-        
+
         private void Prepsat()
         {
             StreamWriter writer = new StreamWriter(path, false);
@@ -224,6 +227,8 @@ namespace WindowsFormsApp1
             }
             writer.Close();
         }
+
+
 
         private void NacistBtn_Click(object sender, EventArgs e)
         {
@@ -238,28 +243,28 @@ namespace WindowsFormsApp1
             List<Zaznam> produkty = new List<Zaznam>();
             while ((radek = reader.ReadLine()) != null)
             {
-               
+
                 string[] hodnoty = radek.Split(';');
                 if (hodnoty.Length == 6)
                 {
-                    
+
                     DataRow row = table.NewRow();
                     row["ID"] = hodnoty[0];
                     row["Název"] = hodnoty[1];
                     row["Popis"] = hodnoty[2];
-                    row["M/K"] = hodnoty[3][0]; 
+                    row["M/K"] = hodnoty[3][0];
                     row["Kategorie"] = hodnoty[4];
                     row["Počet"] = int.TryParse(hodnoty[5], out int pocet) ? pocet : 0;
 
-                    
+
                     table.Rows.Add(row);
                 }
-                 
+
 
             }
             reader.Close();
             dataGridView1.DataSource = table;
-           
+
         }
 
         private void PridatPocBtn_Click(object sender, EventArgs e)
@@ -282,7 +287,6 @@ namespace WindowsFormsApp1
 
                         if (int.TryParse(row["Počet"].ToString(), out int aktualniPocet))
                         {
-
                             row["Počet"] = aktualniPocet + novyPocet;
                             Prepsat();
                         }
@@ -290,8 +294,37 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        private void ConvertJson_Click(object sender, EventArgs e)
+        {
+            string fpath = path;
+            var lines = File.ReadAllLines(fpath);
+            List<Zaznam> zaznamy = new List<Zaznam>();
+            foreach (string line in lines)
+            {
+                string[] hodnoty = line.Split(';');
+                if (hodnoty.Length == 6)
+                {
+                    Zaznam zaznam = new Zaznam();
+                    zaznam.ID = hodnoty[0];
+                    zaznam.Nazev = hodnoty[1];
+                    zaznam.Popis = hodnoty[2];
+                    zaznam.MK = hodnoty[3];
+                    zaznam.Kategorie = hodnoty[4];
+                    zaznam.Pocet = hodnoty[5];
+                    zaznamy.Add(zaznam);
+                }
+
+                string json = JsonConvert.SerializeObject(zaznamy, Formatting.Indented);
+
+                string Jpath = "data.json";
+                File.WriteAllText(Jpath, json);
+
+
+            }
+        }
     }
-    }
+}
 
 
 

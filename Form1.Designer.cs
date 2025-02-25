@@ -58,6 +58,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.NacistBtn = new System.Windows.Forms.Button();
             this.PridatPocBtn = new System.Windows.Forms.Button();
+            this.ConvertJson = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -318,11 +319,22 @@
             this.PridatPocBtn.UseVisualStyleBackColor = true;
             this.PridatPocBtn.Click += new System.EventHandler(this.PridatPocBtn_Click);
             // 
+            // ConvertJson
+            // 
+            this.ConvertJson.Location = new System.Drawing.Point(1037, 377);
+            this.ConvertJson.Name = "ConvertJson";
+            this.ConvertJson.Size = new System.Drawing.Size(127, 31);
+            this.ConvertJson.TabIndex = 32;
+            this.ConvertJson.Text = ".json";
+            this.ConvertJson.UseVisualStyleBackColor = true;
+            this.ConvertJson.Click += new System.EventHandler(this.ConvertJson_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 744);
+            this.Controls.Add(this.ConvertJson);
             this.Controls.Add(this.PridatPocBtn);
             this.Controls.Add(this.NacistBtn);
             this.Controls.Add(this.label11);
@@ -394,6 +406,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button NacistBtn;
         private System.Windows.Forms.Button PridatPocBtn;
+        private System.Windows.Forms.Button ConvertJson;
     }
 }
 
