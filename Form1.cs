@@ -108,7 +108,7 @@ namespace WindowsFormsApp1
                                 break;
                             }
                             row["Počet"] = aktualniPocet - novyPocet;
-
+                            Prepsat();
                         }
                     }
                 }
@@ -148,7 +148,7 @@ namespace WindowsFormsApp1
                     dataGridView1.DataSource = null;
                     dataGridView1.DataSource = table;
                 }
-
+               
             }
         }
 
