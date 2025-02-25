@@ -164,7 +164,7 @@ namespace WindowsFormsApp1
             string hledatKat = hledKatTxt.Text;
             string filtr = "";
 
-            if (string.IsNullOrEmpty(hledatID))
+            if (!string.IsNullOrEmpty(hledatID))
             {
                 filtr += $"ID = '{hledatID}'";
             }
@@ -213,6 +213,17 @@ namespace WindowsFormsApp1
             writer.WriteLine(zaznam);
             writer.Close();
         }
+        
+        private void Prepsat()
+        {
+            StreamWriter writer = new StreamWriter(path, false);
+            foreach (DataRow row in table.Rows)
+            {
+                string zaznam = $"{row["ID"]};{row["Název"]};{row["Popis"]};{row["M/K"]};{row["Kategorie"]};{row["Počet"]}";
+                writer.WriteLine(zaznam);
+            }
+            writer.Close();
+        }
 
         private void NacistBtn_Click(object sender, EventArgs e)
         {
@@ -222,6 +233,7 @@ namespace WindowsFormsApp1
         private void Nacist()
         {
             StreamReader reader = new StreamReader(path, true);
+            table.Clear();
             string radek;
             List<Zaznam> produkty = new List<Zaznam>();
             while ((radek = reader.ReadLine()) != null)
@@ -245,6 +257,7 @@ namespace WindowsFormsApp1
                  
 
             }
+            reader.Close();
             dataGridView1.DataSource = table;
            
         }
@@ -271,7 +284,7 @@ namespace WindowsFormsApp1
                         {
 
                             row["Počet"] = aktualniPocet + novyPocet;
-
+                            Prepsat();
                         }
                     }
                 }
