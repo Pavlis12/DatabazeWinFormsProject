@@ -59,6 +59,7 @@
             this.NacistBtn = new System.Windows.Forms.Button();
             this.PridatPocBtn = new System.Windows.Forms.Button();
             this.ConvertJson = new System.Windows.Forms.Button();
+            this.PridKatCbox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -250,9 +251,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(699, 448);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 20);
+            this.label6.Size = new System.Drawing.Size(50, 20);
             this.label6.TabIndex = 22;
-            this.label6.Text = "m/k";
+            this.label6.Text = "m / ks";
             // 
             // label7
             // 
@@ -329,11 +330,21 @@
             this.ConvertJson.UseVisualStyleBackColor = true;
             this.ConvertJson.Click += new System.EventHandler(this.ConvertJson_Click);
             // 
+            // PridKatCbox
+            // 
+            this.PridKatCbox.FormattingEnabled = true;
+            this.PridKatCbox.Location = new System.Drawing.Point(779, 510);
+            this.PridKatCbox.Name = "PridKatCbox";
+            this.PridKatCbox.Size = new System.Drawing.Size(134, 28);
+            this.PridKatCbox.TabIndex = 33;
+            this.PridKatCbox.SelectedIndexChanged += new System.EventHandler(this.PridKatCbox_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 744);
+            this.Controls.Add(this.PridKatCbox);
             this.Controls.Add(this.ConvertJson);
             this.Controls.Add(this.PridatPocBtn);
             this.Controls.Add(this.NacistBtn);
@@ -407,6 +418,7 @@
         private System.Windows.Forms.Button NacistBtn;
         private System.Windows.Forms.Button PridatPocBtn;
         private System.Windows.Forms.Button ConvertJson;
+        private System.Windows.Forms.ComboBox PridKatCbox;
     }
 }
 

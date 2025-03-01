@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1
 {
@@ -39,12 +40,13 @@ namespace WindowsFormsApp1
         {
             Nastaveni();
             Nacist();
+            LoadComboBox();
         }
 
         private void Nastaveni()
         {
             path = Application.StartupPath;
-            path = path + "\\data.txt";
+            path = path + "\\data.csv";
             dataGridView1.ReadOnly = true;
             table = new DataTable();
             table.Columns.Add("ID", typeof(string));
@@ -56,7 +58,16 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = table;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+        private void LoadComboBox()
+        {
+            PridKatCbox.Items.Clear();
+            PridKatCbox.Items.Add("Žaluzie");
+            PridKatCbox.Items.Add("Rolety");
+            PridKatCbox.Items.Add("Screeny");
+            PridKatCbox.Items.Add("sítě");
+            PridKatCbox.Items.Add("Ostatní");
 
+        }
         private void prBtn_Click_1(object sender, EventArgs e)
         {
             Pridat();
@@ -326,6 +337,14 @@ namespace WindowsFormsApp1
 
             }
         }
+
+        private void PridKatCbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+          
+        }
+
+      
     }
 }
 
