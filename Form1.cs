@@ -26,8 +26,10 @@ namespace WindowsFormsApp1
             public string Kategorie { get; set; }
             public string Pocet { get; set; }
         }
+
         private DataTable table;
         string path = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             Nastaveni();
+            Nacist();
         }
 
         private void Nastaveni()
